@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>
+        L'atelier de Yoshida
+    </title>
+</head>
+ 
+<body>
+    <h1>Programming Room</h1>
+    <h2>Go to <a href = "https://atcoder.jp">AtCoder</a></h2>
+    <a href = "https://atcoder.jp/users/yyoshida">My Profile</a>
+    <h3>ABC386: AtCoder Beginner Contest</h3>
+        <a href = "https://atcoder.jp/contests/abc386">Contest Page</a>
+        <ul>
+            <li>A -  </li>
+            <li>B -  </li>
+            <li>C -  Perfect Standings</li>
+            <p>問題の概要：<br>
+                文字列「ABCDE」からできる、空でない部分文字列31通りがある。<br>
+                入力として、各文字に対応する点数が与えられる。<br>
+                部分文字列の持つ点数の合計が高い順から出力せよ。<br>
+                ただし同点の場合、文字列が辞書順で小さいほうから出力せよ。<br>
+            </p>
+            <p>分析：<br>
+                各文字を「選ぶ」か「選ばないか」かの２通りを取る。<br>
+                5文字の場合、2<sup>5</sup> = 32通り を経て部分文字列が完成する。<br>
+                まったく文字を選ばない空の場合を除いて、考えるべきは31通りある。<br>
+            </p>
+            <p>方針：<br>
+                31通りなので全探索をする。<br>
+                「0」を「選ばない」、「1」を「選ぶ」ことに対応させる。<br>
+                2進数を0から32までつくる。<br>
+                2進数1桁目をA問題、2桁目をB問題のように対応させる。<br>
+                各部分文字列と点数のリストを作る。<br>
+                部分文字列を辞書の小さい順に並べる。<br>
+                得点を大きい順に並べる<br>
+            </p>
+            <p>つまづいたところ：Pythonでの実装<br>
+                5桁の2進数を格納したい<br>
+                ⇒format(i,"b").zfill(5)<br>
+                2次元リストD=[文字列,整数]の各要素に着目してソートしたい<br>
+                ⇒D.sort(key=lambda x: (x[0]))<br>
+                ⇒D.sort(key=lambda x: (x[1]), reverse= True)<br>
+            </p>
+        </ul>
+
+</body>
+</html>
